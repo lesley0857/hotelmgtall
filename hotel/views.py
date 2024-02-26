@@ -20,7 +20,7 @@ import json
 
 
 import stripe
-stripe.api_key = 'sk_test_51Hu0AzH60lA1oSoomphzz4KWIOkf3fyNb6xKnMTLtZuqrYsafvJvMOQXhqxqOV0vy7EkWSuJxV3GxH5q899R8M8l00MDvjRsHl'
+stripe.api_key = 'sk_test_51OnRMKFZmMwEQaLg1Rle3Y8vQ9yNLkIqU0Cxg6f0TaYM2QRYfVCvihbQtI5JD27YOqBrurRDj3aXS8SJUkZ1Gsey00GLiR77fS'
 
 env = environ.Env(
     # set casting, default value
@@ -200,7 +200,10 @@ class CheckoutView(View):
         return render(request, 'checkout.html', context)
 
     def post(self, request, *args, **kwargs):
-        person_name, person_email = get_random_person_name_email()
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+
+        person_name, person_email = name, email
 
         customer = stripe.Customer.create(
             name=person_name,
@@ -212,7 +215,7 @@ class CheckoutView(View):
         )
         person.save()
         try:
-            stripe.api_key = 'sk_test_51Hu0AzH60lA1oSoomphzz4KWIOkf3fyNb6xKnMTLtZuqrYsafvJvMOQXhqxqOV0vy7EkWSuJxV3GxH5q899R8M8l00MDvjRsHl'
+            stripe.api_key = 'sk_test_51OnRMKFZmMwEQaLg1Rle3Y8vQ9yNLkIqU0Cxg6f0TaYM2QRYfVCvihbQtI5JD27YOqBrurRDj3aXS8SJUkZ1Gsey00GLiR77fS'
             checkout_session = stripe.checkout.Session.create(
                 success_url="http://127.0.0.1:8000/success",
                 cancel_url="http://127.0.0.1:8000/cancel",
@@ -220,8 +223,8 @@ class CheckoutView(View):
                 line_items=[
                     {
                         'price_data': {
-                            'currency': 'inr',
-                            'unit_amount': int(request.session['amount'])*100,
+                            'currency': 'ngn',
+                            'unit_amount': int(request.session['amount'])*1800,
                             'product_data': {
                                 'name': request.session['room_category'],
 
