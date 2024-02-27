@@ -35,7 +35,7 @@ SECRET_KEY = 'derttyuyumymi,dfv434vrr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [".onrender.com"]
 
 
 # Application definition
