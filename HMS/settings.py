@@ -116,7 +116,7 @@ DATABASES = {
         "NAME":     "hotelmgtalldb",
         "USER":     "hotelmgtalldb_user",
         "PASSWORD": "6gpt8tRlIObgLEi0j3KmickCftGygyWW",
-        "HOST":     "dpg-cnfrf15a73kc73dcbieg-a",
+        "HOST":     "dpg-cnfrf15a73kc73dcbieg-a.oregon-postgres.render.com",
         "PORT":     "5432",
     }
 }
