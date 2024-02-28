@@ -35,7 +35,7 @@ SECRET_KEY = 'derttyuyumymi,dfv434vrr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".onrender.com"]
+ALLOWED_HOSTS = ['.onrender.com', '127.0.0.1']
 
 
 # Application definition
@@ -113,8 +113,8 @@ DATABASES = {
 
     'default': {
         "ENGINE":   "django.db.backends.postgresql",
-        "NAME":     "hotelmgtalldb_user",
-        "USER":     "postgres",
+        "NAME":     "hotelmgtalldb",
+        "USER":     "hotelmgtalldb_user",
         "PASSWORD": "6gpt8tRlIObgLEi0j3KmickCftGygyWW",
         "HOST":     "dpg-cnfrf15a73kc73dcbieg-a",
         "PORT":     "5432",
@@ -168,7 +168,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# USE_TZ = True
 
 SITE_ID = 1
 
@@ -194,4 +194,4 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
