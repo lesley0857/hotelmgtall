@@ -1,1 +1,1 @@
-web: gunicorn HMS.wsgi:application
+web: gunicorn HMS.wsgi

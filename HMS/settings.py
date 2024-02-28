@@ -109,15 +109,26 @@ WSGI_APPLICATION = 'HMS.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-if DEBUG == True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+DATABASES = {
+
+    'default': {
+        "ENGINE":   "django.db.backends.postgresql",
+        "NAME":     "hotelmgtalldb_user",
+        "USER":     "postgres",
+        "PASSWORD": "6gpt8tRlIObgLEi0j3KmickCftGygyWW",
+        "HOST":     "dpg-cnfrf15a73kc73dcbieg-a",
+        "PORT":     "5432",
     }
-else:
-    DATABASES = {'default': dj_database_url.config()}
+}
+# if DEBUG == True:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
+# else:
+#     DATABASES = {'default': dj_database_url.config()}
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
