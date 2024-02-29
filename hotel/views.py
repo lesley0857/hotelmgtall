@@ -217,14 +217,14 @@ class CheckoutView(View):
         try:
             stripe.api_key = 'sk_test_51OnRMKFZmMwEQaLg1Rle3Y8vQ9yNLkIqU0Cxg6f0TaYM2QRYfVCvihbQtI5JD27YOqBrurRDj3aXS8SJUkZ1Gsey00GLiR77fS'
             checkout_session = stripe.checkout.Session.create(
-                success_url="http://127.0.0.1:8000/success",
-                cancel_url="http://127.0.0.1:8000/cancel",
+                success_url="https://hotelmgtall.onrender.com/success",
+                cancel_url="https://hotelmgtall.onrender.com/cancel",
                 payment_method_types=["card"],
                 line_items=[
                     {
                         'price_data': {
                             'currency': 'ngn',
-                            'unit_amount': int(request.session['amount'])*1800,
+                            'unit_amount': int(request.session['amount'])*1500,
                             'product_data': {
                                 'name': request.session['room_category'],
 

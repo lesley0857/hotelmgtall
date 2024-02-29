@@ -120,6 +120,7 @@ DATABASES = {
         "PORT":     "5432",
     }
 }
+# dpg-cnfrf15a73kc73dcbieg-a.oregon-postgres.render.com
 # if DEBUG == True:
 #     DATABASES = {
 #         'default': {
